@@ -127,6 +127,7 @@ main {
 main section {
   padding: 30px 0;
   text-align: center;
+  background: dodgerblue;
 }
 main section a {
   display: inline-block;
