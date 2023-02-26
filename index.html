@@ -6,32 +6,25 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>모세2기 제자반</title>
+  <script src="./jquery-3.6.3.min.js"></script>
+  <link rel="stylesheet" href="./style.css">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      text-align: center;
-    }
-
     h1 {
+      font-size: 26px;
       font-weight: 500;
       color: #333;
     }
 
-    #wrap {
+    #wrap2 {
       border: 1px solid #ccc;
       padding: 30px;
       border-radius: 20px;
+      /* height: 100vh; */
+      width: 260px;
+      margin: 0 auto;
     }
 
-    a {
+    a.btn {
       display: inline-block;
       margin-top: 20px;
       text-decoration: none;
@@ -43,6 +36,10 @@
       box-shadow: 3px 3px 10px rgb(95, 16, 16);
     }
 
+    .s_wrap {
+      display: none;
+    }
+
     @media (max-width : 576px) {
       h1 {
         font-size: 24px;
@@ -52,10 +49,58 @@
 </head>
 
 <body>
-  <div id="wrap">
+  <div id="wrap2">
     <h1>버튼을 눌러보세요~!</h1>
-    <a href="./birthday.html">버튼</a>
+    <a class="btn" href="#">버튼</a>
   </div>
+
+  <div class="s_wrap">
+    <div class="pray">
+      <img class="pray01" src="./img/pray.png" alt="기도의 지팡이">
+      <img class="pray02" src="./img/pray.png" alt="기도의 지팡이">
+    </div>
+
+
+    <div id="wrap">
+      <h1 class="h1">나모세 목사님</h1>
+      <h2 class="h2">생일 축하드려요~!~!<br>❤🎊🎉🎊❤</h2>
+      <div class="img_wrap">
+        <img class="we" src="./img/we2.png" alt="모세2기 제자반">
+        <img class="he" src="./img/he.png" alt="나모세목사님">
+      </div>
+    </div>
+    <main>
+      <section>
+        <a href="https://jiheeyou.notion.site/2-37d272ef0e824a959a816e45d0f74cde" target="_blank">모세2기 사진 & 영상 (노션)</a>
+      </section>
+    </main>
+
+
+    <canvas id="canvas"></canvas>
+  </div>
+
+
+  <script src="./confetti_v2.js"></script>
+  <script>
+    const btn = document.querySelector(".btn");
+    const firstPage = document.querySelector("#wrap2");
+    const secondPage = document.querySelector(".s_wrap");
+    const h1 = document.querySelector(".h1");
+    const h2 = document.querySelector(".h2");
+
+    const we = document.querySelector(".we");
+    const he = document.querySelector(".he");
+
+    btn.addEventListener("click", function () {
+      firstPage.style.display = "none";
+      secondPage.style.display = "block";
+      h1.classList.add("move2");
+      h2.classList.add("move2");
+      we.classList.add("move");
+      he.classList.add("move");
+    })
+
+  </script>
 </body>
 
 </html>
